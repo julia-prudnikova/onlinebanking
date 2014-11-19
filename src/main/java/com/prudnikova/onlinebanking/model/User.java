@@ -1,13 +1,24 @@
 package com.prudnikova.onlinebanking.model;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
+
+@Entity
+@Table(name="User")
 public class User {
     
     public static final String DEFAULT_NAME = "default name";
     public static final String DEFAULT_LOGIN = "default login";
     public static final String DEFAULT_PASSWORD = "default password";
         
+
+    private Long id;
     private String name;
     private String login;
     private String password;
@@ -26,11 +37,30 @@ public class User {
         this.password = password;
         registrationDate = new Date();        
     }
+    
+    
+    /**
+     * @return the id
+     */
+    @Id
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
+    @Column(name="id")
+    public Long getId() {
+        return id;
+    }
 
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     /**
      * @return the name
      */
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -45,6 +75,7 @@ public class User {
     /**
      * @return the login
      */
+    @Column(name="login")
     public String getLogin() {
         return login;
     }
@@ -59,6 +90,7 @@ public class User {
     /**
      * @return the password
      */
+    @Column(name="password")
     public String getPassword() {
         return password;
     }
@@ -73,6 +105,7 @@ public class User {
     /**
      * @return the registrationDate
      */
+    @Column(name="registrationDate")
     public Date getRegistrationDate() {
         return registrationDate;
     }
