@@ -2,6 +2,7 @@ package com.prudnikova.onlinebanking;
 
 import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.UserService;
+import com.prudnikova.onlinebanking.service.implementation.UserServiceImplementation;
 import java.util.Date;
 import static org.junit.Assert.fail;
 
@@ -17,7 +18,7 @@ public class AppTest {
         
         // User service test!
         System.out.println("User service test.");
-        UserService userService = new UserService();
+        UserService userService = new UserServiceImplementation();
         User user = new User();
         user.setId(0);
         user.setLogin("hibernateUser");        
