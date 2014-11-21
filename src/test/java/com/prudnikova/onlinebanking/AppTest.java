@@ -1,8 +1,8 @@
 package com.prudnikova.onlinebanking;
 
+import com.prudnikova.SpringFactory;
 import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.UserService;
-import com.prudnikova.onlinebanking.service.implementation.UserServiceImplementation;
 import java.util.Date;
 import static org.junit.Assert.fail;
 
@@ -11,14 +11,16 @@ import org.junit.Test;
 public class AppTest {
 
     @Test
-    public void testUsers() {
+    public void testUsers() {        
         System.out.println("********************************************************************************");
         System.out.println("Working Directory = "
                 + System.getProperty("user.dir"));
         
         // User service test!
         System.out.println("User service test.");
-        UserService userService = new UserServiceImplementation();
+        
+        UserService userService = (UserService) SpringFactory.getspringApplicationContext().getBean("userService");
+                ;
         User user = new User();
         user.setId(0);
         user.setLogin("hibernateUser");        

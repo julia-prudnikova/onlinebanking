@@ -1,6 +1,6 @@
 package com.prudnikova.onlinebanking.service.implementation;
 
-import com.prudnikova.NewHibernateUtil;
+import com.prudnikova.HibernateFactory;
 import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.UserService;
 import org.hibernate.Session;
@@ -15,7 +15,7 @@ public class UserServiceImplementation implements UserService{
     @Override
     public void createUser(User user) {
         //SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
-        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(user);
@@ -25,7 +25,7 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public User readUser(int userId) {
-        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         User user;
@@ -37,7 +37,7 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public void updateUser(User user) {
-        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.update(user);
@@ -47,7 +47,7 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public void deleteUser(User user) {
-        SessionFactory sessionFactory = NewHibernateUtil.getSessionFactory();
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.delete(user);

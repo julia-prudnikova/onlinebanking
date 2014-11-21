@@ -3,7 +3,7 @@ package com.prudnikova;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 
-public class NewHibernateUtil {
+public class HibernateFactory {
 
     private static final SessionFactory sessionFactory;
     
