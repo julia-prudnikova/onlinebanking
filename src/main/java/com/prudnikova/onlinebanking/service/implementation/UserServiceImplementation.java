@@ -3,10 +3,12 @@ package com.prudnikova.onlinebanking.service.implementation;
 import com.prudnikova.HibernateFactory;
 import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.UserService;
+import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class UserServiceImplementation implements UserService{
+public class UserServiceImplementation implements UserService {
 
     public UserServiceImplementation() {
 
@@ -54,5 +56,33 @@ public class UserServiceImplementation implements UserService{
         session.getTransaction().commit();
         session.close();
     }
+    
+    @Override
+    public List getAllUsers(){
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        List userList = session.createCriteria(User.class).list();
+        session.close();
 
+        return userList;
+    }
+
+    @Override
+    public boolean CheckUser(String login){
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        ArrayList<User> userList = (ArrayList<User>) session.createCriteria(User.class).list();
+        session.close();
+        
+        boolean resultFlag = false;
+        for (User user : userList) {
+            if (user.getLogin().equals(login)) {
+                resultFlag = true;
+            }
+        }
+        
+        return resultFlag;
+    }
 }

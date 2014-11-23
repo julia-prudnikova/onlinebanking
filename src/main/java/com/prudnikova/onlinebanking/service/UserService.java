@@ -1,6 +1,7 @@
 package com.prudnikova.onlinebanking.service;
 
 import com.prudnikova.onlinebanking.model.User;
+import java.util.List;
 
 public interface UserService {
     
@@ -9,4 +10,7 @@ public interface UserService {
     void updateUser(User user);
     void deleteUser(User user);
     
+    List getAllUsers();
+    
+    boolean CheckUser(String login);
 }
