@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImplementation implements UserService {
 
     public UserServiceImplementation() {
@@ -62,10 +64,28 @@ public class UserServiceImplementation implements UserService {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List userList = session.createCriteria(User.class).list();
+        List usersList = session.createCriteria(User.class).list();
         session.close();
 
-        return userList;
+        return usersList;
+    }
+    
+    @Override
+    public User getUserByLogin(String login){
+        SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        ArrayList<User> usersList = (ArrayList<User>) session.createCriteria(User.class).list();
+        session.close();
+        
+        User resultUser = null;
+        for (User user : usersList) {
+            if (user.getLogin().equals(login)) {
+                resultUser = user;
+            }
+        }
+        
+        return resultUser;
     }
 
     @Override
@@ -73,11 +93,11 @@ public class UserServiceImplementation implements UserService {
         SessionFactory sessionFactory = HibernateFactory.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        ArrayList<User> userList = (ArrayList<User>) session.createCriteria(User.class).list();
+        ArrayList<User> usersList = (ArrayList<User>) session.createCriteria(User.class).list();
         session.close();
         
         boolean resultFlag = false;
-        for (User user : userList) {
+        for (User user : usersList) {
             if (user.getLogin().equals(login)) {
                 resultFlag = true;
             }
@@ -85,4 +105,5 @@ public class UserServiceImplementation implements UserService {
         
         return resultFlag;
     }
+    
 }

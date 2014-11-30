@@ -18,7 +18,7 @@
 
             <form action="login.html">
                 <button class="btn btn-lg btn btn-warning btn-block" type="submit">
-                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Please, try again
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Please, try again
                 </button>
             </form>
             

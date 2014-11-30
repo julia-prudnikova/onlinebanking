@@ -10,5 +10,6 @@
     <property name="hibernate.show_sql">true</property>
     
     <mapping class="com.prudnikova.onlinebanking.model.User" />
+    <mapping class="com.prudnikova.onlinebanking.model.Card" />
   </session-factory>
 </hibernate-configuration>

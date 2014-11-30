@@ -1,6 +1,8 @@
 package com.prudnikova.onlinebanking.controller.rest;
 
+import com.prudnikova.SessionBean;
 import com.prudnikova.SpringFactory;
+import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.UserService;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
@@ -28,6 +30,9 @@ public class UserController {
 
         if (isUserExist == true) {
             try {
+                SessionBean sessionBean = (SessionBean) SpringFactory.getspringApplicationContext().getBean("sessionBean");
+                User user = userService.getUserByLogin(login);
+                sessionBean.setCurrentUser(user);
                 location = new java.net.URI("../main-menu.jsp");
             } catch (URISyntaxException ex) {
                 Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
