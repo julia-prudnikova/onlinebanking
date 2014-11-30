@@ -33,6 +33,9 @@
                     String login = "";
                     if (user != null) {
                         login = user.getName();
+
+                        String admin = user.getAdmin();
+                        login += " (" + admin + ")";
                     }
 
                 %>
@@ -41,49 +44,52 @@
             <br>  
 
             <%
+                if (user != null) {
                     CardService cardService = (CardService) SpringFactory.getspringApplicationContext().getBean("cardService");
                     List<Card> cardsList = new ArrayList<>();
                     cardsList = cardService.getAllCards();
+                    List<Card> finalCardsList = new ArrayList<>();
                     
-                    for (int i = 0; i < cardsList.size(); i++){
+                    for (int i = 0; i < cardsList.size(); i++) {
                         Card card = cardsList.get(i);
-                        if (card != null){
+                        if (card != null) {
                             int userId = card.getUserId();
-                            if (userId != user.getId()){
-                                cardsList.remove(i);
-                            }
+                            if (userId == user.getId()) {
+                                finalCardsList.add(card);
+                            } 
                         }
                     }
-            
-                for (int i = 0; i < cardsList.size(); i++) {
-                    out.write("<table class=\"table table-striped\">");
-                    out.write("<tr>");
-                    out.write("<th>Card number</th>");
-                    out.write("<th>Card currency</th>");
-                    out.write("<th>Card balance</th>");
-                    out.write("<th>Card state</th>");
-                    out.write("</tr>");
-                    
-                    Card card = cardsList.get(i);
-                    if (card != null){
-                        int cardId = card.getId();
-                        out.write("<td>"+ cardId +"</td>");
-                        
-                        String cardCurrency = card.getCurrency();
-                        out.write("<td>"+ cardCurrency +"</td>");
-                        
-                        int cardBalance = card.getBalance();
-                        out.write("<td>"+ cardBalance +"</td>");
-                        
-                        String cardState = card.getState();
-                        out.write("<td>"+ cardState +"</td>");
+
+                    for (int i = 0; i < finalCardsList.size(); i++) {
+                        out.write("<table class=\"table table-striped\">");
+                        out.write("<tr>");
+                        out.write("<th>Card number</th>");
+                        out.write("<th>Card currency</th>");
+                        out.write("<th>Card balance</th>");
+                        out.write("<th>Card state</th>");
+                        out.write("</tr>");
+
+                        Card card = finalCardsList.get(i);
+                        if (card != null) {
+                            int cardId = card.getId();
+                            out.write("<td>" + cardId + "</td>");
+
+                            String cardCurrency = card.getCurrency();
+                            out.write("<td>" + cardCurrency + "</td>");
+
+                            int cardBalance = card.getBalance();
+                            out.write("<td>" + cardBalance + "</td>");
+
+                            String cardState = card.getState();
+                            out.write("<td>" + cardState + "</td>");
+                        }
+
+                        out.write("<tr>");
+                        out.write("</tr>");
+                        out.write("</table>");
+                        out.write("<br>");
                     }
-                    
-                    out.write("<tr>");
-                    out.write("</tr>");
-                    out.write("</table>");
-                    out.write("<br>");
-            }
+                }
             %>
 
             <form action="main-menu.jsp">

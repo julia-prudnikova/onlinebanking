@@ -26,6 +26,10 @@
                     String login = "";
                     if (user != null) {
                         login = user.getName();
+                        
+                        String admin = user.getAdmin();
+                        login += " (" + admin + ")";
+                        
                     }
 
                 %>
@@ -48,11 +52,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Banking card</td>
+                    <td>Exchange currency</td>
                     <td>
                         <form action="login.html">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Card menu
+                                <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Exchange menu
                             </button>
                         </form>
                     </td>    
@@ -82,22 +86,33 @@
                             out.write("<tr>");
                             out.write("<td>User operations</td>");
                             out.write("<td>");
-                            out.write("<form action=\"login.html\">");
-                            out.write("<button class=\"btn btn-warning btn-block\" type=\"submit\">");
+                            out.write("<form action=\"user-menu.jsp\">");
+                            out.write("<button class=\"btn btn-warning btn-block\">");
                             out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> User menu");
                             out.write("</button>");
                             out.write("</form>");
                             out.write("</td>");
                             out.write("</tr>");
+                            
+                            out.write("<tr>");
+                            out.write("<td>User operations</td>");
+                            out.write("<td>");
+                            out.write("<form action=\"card-menu.jsp\">");
+                            out.write("<button class=\"btn btn-warning btn-block\">");
+                            out.write("<span class=\"glyphicon glyphicon-credit-card\" aria-hidden=\"true\"></span> Card menu");
+                            out.write("</button>");
+                            out.write("</form>");
+                            out.write("</td>");
+                            out.write("</tr>");                            
                         }
                     }
                 %>
 
             </table>
 
-            <form action="login.html">
+            <form class="form-signin" method="GET" action="/onlinebanking/webresources/logout">
                 <button class="btn btn-warning" type="submit">
-                    <span class="glyphicon glyphicon-off"></span> Exit
+                    <span class="glyphicon glyphicon-off"></span> Log out
                 </button>
             </form>
         </div>

@@ -14,10 +14,10 @@
     </head>
     <body>
         <div class="form-signin">
-            <h3>Current user does not exist!!!</h3>
+            <h4>Current user does not exist!!!</h4>
 
             <form action="login.html">
-                <button class="btn btn-lg btn btn-warning btn-block" type="submit">
+                <button class="btn btn-lg btn btn-warning btn-block">
                     <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Please, try again
                 </button>
             </form>

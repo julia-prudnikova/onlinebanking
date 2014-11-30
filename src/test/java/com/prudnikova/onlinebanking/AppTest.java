@@ -75,10 +75,10 @@ public class AppTest {
         card.setUserId(1);
                                 
         cardService.createCard(card);
-        int cardId = user.getId();
-        System.out.println("create card done. Card id: " + userId);
+        int cardId = card.getId();
+        System.out.println("create card done. Card id: " + cardId);
         
-        card = cardService.readCard(userId);        
+        card = cardService.readCard(cardId);        
         if (card.getBalance() != balance){
             fail("Card balance from create and read operations are not equals!!!");
         } else {
