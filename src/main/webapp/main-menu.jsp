@@ -26,10 +26,10 @@
                     String login = "";
                     if (user != null) {
                         login = user.getName();
-                        
+
                         String admin = user.getAdmin();
                         login += " (" + admin + ")";
-                        
+
                     }
 
                 %>
@@ -64,8 +64,8 @@
                 <tr>
                     <td>Payment operations</td>
                     <td>
-                        <form action="login.html">
-                            <button class="btn btn-info btn-block" type="submit">
+                        <form action="">
+                            <button class="btn btn-info btn-block">
                                 <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Payment menu
                             </button>
                         </form>
@@ -74,9 +74,11 @@
                 <tr>
                     <td>Statistic</td>
                     <td>
-                        <button class="btn btn-info btn-block" type="submit">
-                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Statistic menu
-                        </button>                        
+                        <form action="stat-menu.jsp">
+                            <button class="btn btn-info btn-block" type="submit">
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Statistic menu
+                            </button> 
+                        </form>
                     </td>
                 </tr>
 
@@ -93,7 +95,7 @@
                             out.write("</form>");
                             out.write("</td>");
                             out.write("</tr>");
-                            
+
                             out.write("<tr>");
                             out.write("<td>User operations</td>");
                             out.write("<td>");
@@ -103,7 +105,7 @@
                             out.write("</button>");
                             out.write("</form>");
                             out.write("</td>");
-                            out.write("</tr>");                            
+                            out.write("</tr>");
                         }
                     }
                 %>

@@ -1,9 +1,12 @@
 package com.prudnikova.onlinebanking.controller.rest;
 
+import com.prudnikova.SessionBean;
 import com.prudnikova.SpringFactory;
 import com.prudnikova.onlinebanking.model.Card;
+import com.prudnikova.onlinebanking.model.Stat;
 import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.CardService;
+import com.prudnikova.onlinebanking.service.StatService;
 import com.prudnikova.onlinebanking.service.UserService;
 import java.net.URISyntaxException;
 import java.util.Date;
@@ -37,6 +40,26 @@ public class CardController {
             
             CardService cardService = (CardService) SpringFactory.getspringApplicationContext().getBean("cardService");
             cardService.createCard(card);
+            
+            SessionBean sessionBean = (SessionBean) SpringFactory.getspringApplicationContext().getBean("sessionBean");
+            User currentUser = sessionBean.getCurrentUser();
+            
+            UserService userService = (UserService) SpringFactory.getspringApplicationContext().getBean("userService");
+            
+            Stat stat = new Stat();
+            stat.setId(0);
+            String currentUserName = currentUser.getName();
+            int cardId = card.getId();
+            String description = currentUserName + " create a new card for user ID: " + userId + ".Card currency is: " + currency + ". Balance: " + balance + " New card ID: " + cardId;
+            stat.setDescription(description);
+            Date date = new Date();
+            stat.setDate(date);
+            int currentUserId = currentUser.getId();
+            stat.setUserId(currentUserId);
+            
+            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService"); 
+            statService.createStat(stat);
+            
             location = new java.net.URI("../card-menu.jsp");
 
         } catch (URISyntaxException ex) {

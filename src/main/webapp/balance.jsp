@@ -93,7 +93,7 @@
             %>
 
             <form action="main-menu.jsp">
-                <button class="btn btn-warning" type="submit">
+                <button class="btn btn-warning">
                     <span class="glyphicon glyphicon-home"></span> Back to main menu
                 </button>
             </form>

@@ -2,7 +2,9 @@ package com.prudnikova.onlinebanking.controller.rest;
 
 import com.prudnikova.SessionBean;
 import com.prudnikova.SpringFactory;
+import com.prudnikova.onlinebanking.model.Stat;
 import com.prudnikova.onlinebanking.model.User;
+import com.prudnikova.onlinebanking.service.StatService;
 import com.prudnikova.onlinebanking.service.UserService;
 import java.net.URISyntaxException;
 import java.util.Date;
@@ -68,6 +70,25 @@ public class UserController {
             
             UserService userService = (UserService) SpringFactory.getspringApplicationContext().getBean("userService");
             userService.createUser(user);
+            
+            SessionBean sessionBean = (SessionBean) SpringFactory.getspringApplicationContext().getBean("sessionBean");
+            User currentUser = sessionBean.getCurrentUser();
+            
+            Stat stat = new Stat();
+            stat.setId(0);
+            String currentUserName = currentUser.getName();
+            String userName = user.getName();
+            int userId = user.getId(); 
+            String description = currentUserName + " create a new user: " + userName + " New user ID: " + userId;
+            stat.setDescription(description);
+            date = new Date();
+            stat.setDate(date);
+            int currentUserId = currentUser.getId();
+            stat.setUserId(currentUserId);
+            
+            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService"); 
+            statService.createStat(stat);                        
+            
             location = new java.net.URI("../user-menu.jsp");
 
         } catch (URISyntaxException ex) {

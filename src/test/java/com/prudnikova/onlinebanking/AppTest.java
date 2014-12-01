@@ -2,8 +2,10 @@ package com.prudnikova.onlinebanking;
 
 import com.prudnikova.SpringFactory;
 import com.prudnikova.onlinebanking.model.Card;
+import com.prudnikova.onlinebanking.model.Stat;
 import com.prudnikova.onlinebanking.model.User;
 import com.prudnikova.onlinebanking.service.CardService;
+import com.prudnikova.onlinebanking.service.StatService;
 import com.prudnikova.onlinebanking.service.UserService;
 import java.util.Date;
 import static org.junit.Assert.fail;
@@ -98,6 +100,26 @@ public class AppTest {
                
         cardService.deleteCard(card);
         System.out.println("Delete card done!");
+        
+        // Stat service test!
+        System.out.println("Stat service test.");
+        
+        StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+
+        Stat stat = new Stat();
+        stat.setId(0);
+        stat.setDescription("Test stat description.");
+        stat.setUserId(0);
+        stat.setDate(new Date());
+        
+                                
+        statService.createStat(stat);
+        int statId = stat.getId();
+        System.out.println("create stat done. Card id: " + statId);
+        
+        statService.deleteStat(stat);
+        System.out.println("Delete stat done!");
+        
     }
 
 }

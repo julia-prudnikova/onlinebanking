@@ -13,5 +13,8 @@
     
     <bean id="cardService"
           class="com.prudnikova.onlinebanking.service.implementation.CardServiceImplementation"/>
+    
+    <bean id="statService"
+              class="com.prudnikova.onlinebanking.service.implementation.StatServiceImplementation"/>
 
 </beans>
