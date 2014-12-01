@@ -52,7 +52,7 @@
                     <tr>
                         <td>
 
-                            <button class="btn btn-warning" type="submit">
+                            <button class="btn btn-info" type="submit">
                                 <span class="glyphicon glyphicon-credit-card"></span> Create new card
                             </button>
                             </form>
@@ -63,7 +63,7 @@
 
                         <td>
                             <form action="card-menu.jsp">
-                                <button class="btn btn-warning">
+                                <button class="btn btn-info">
                                     <span class="glyphicon glyphicon-credit-card"></span> Back to card menu
                                 </button>
                             </form>

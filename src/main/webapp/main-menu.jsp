@@ -54,17 +54,17 @@
                 <tr>
                     <td>Exchange currency</td>
                     <td>
-                        <form action="login.html">
-                            <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Exchange menu
+                        
+                            <button class="btn btn-danger btn-block" type="submit">
+                                <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Exchange menu 
                             </button>
-                        </form>
+
                     </td>    
                 </tr>
                 <tr>
                     <td>Payment operations</td>
                     <td>
-                        <form action="">
+                        <form action="payment-menu.jsp">
                             <button class="btn btn-info btn-block">
                                 <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Payment menu
                             </button>
@@ -113,7 +113,7 @@
             </table>
 
             <form class="form-signin" method="GET" action="/onlinebanking/webresources/logout">
-                <button class="btn btn-warning" type="submit">
+                <button class="btn btn-info" type="submit">
                     <span class="glyphicon glyphicon-off"></span> Log out
                 </button>
             </form>

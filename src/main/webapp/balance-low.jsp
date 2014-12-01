@@ -10,15 +10,15 @@
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <script src="resources/js/bootstrap.min.js"></script>
 
-        <title>Login error page</title>
+        <title>Balance low page</title>
     </head>
     <body>
         <div class="form-signin">
-            <h4>Current user does not exist!!!</h4>
+            <h4>Balance low</h4>
             <br>
-            <form action="main-menu.jsp">
+            <form action="payment-menu.jsp">
                 <button class="btn btn-info">
-                    <span class="glyphicon glyphicon-home"></span> Try again!
+                    <span class="glyphicon glyphicon-home"></span> Back to payment-menu
                 </button>
             </form>            
         </div>

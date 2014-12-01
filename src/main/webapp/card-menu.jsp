@@ -97,7 +97,7 @@
                 <tr>
                     <td>
                         <form action="card-operations.jsp">
-                            <button class="btn btn-warning" type="submit">
+                            <button class="btn btn-info" type="submit">
                                 <span class="glyphicon glyphicon-credit-card"></span> Card operations
                             </button>
                         </form>
@@ -107,7 +107,7 @@
                     </td>
                     <td>
                         <form action="main-menu.jsp">
-                            <button class="btn btn-warning" type="submit">
+                            <button class="btn btn-info" type="submit">
                                 <span class="glyphicon glyphicon-home"></span> Back to main menu
                             </button>
                         </form>

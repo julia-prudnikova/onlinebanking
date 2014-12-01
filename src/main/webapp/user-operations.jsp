@@ -51,7 +51,7 @@
                 <tr>
                     <td>
                         
-                            <button class="btn btn-warning" type="submit">
+                            <button class="btn btn-info" type="submit">
                                 <span class="glyphicon glyphicon-user"></span> Create new user
                             </button>
                         </form>
@@ -62,7 +62,7 @@
 
                     <td>
                         <form action="user-menu.jsp">
-                            <button class="btn btn-warning">
+                            <button class="btn btn-info">
                                 <span class="glyphicon glyphicon-user"></span> Back to users menu
                             </button>
                             </form>
