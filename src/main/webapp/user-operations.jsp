@@ -12,7 +12,7 @@
         <script src="resources/js/bootstrap.min.js"></script>
         <link href="resources/css/bank.css" rel="stylesheet">
 
-        <title>User operations page</title>
+        <title>Users operations page</title>
     </head>
     <body>
         <div class="container">
