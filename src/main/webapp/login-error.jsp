@@ -16,7 +16,7 @@
         <div class="form-signin">
             <h4>Current user does not exist!!!</h4>
             <br>
-            <form action="main-menu.jsp">
+            <form action="login.html">
                 <button class="btn btn-info">
                     <span class="glyphicon glyphicon-home"></span> Try again!
                 </button>
