@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Cards operations menu</h3>
+            <h3>Банковская система онлайн.Меню работы с картами</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -38,13 +38,13 @@
             <br>
 
             <form class="form-signin" method="GET" action="/onlinebanking/webresources/cards/create">
-                <input name = "paramCurrency" type="text" id="login" class="form-control" placeholder="currency (dollar, euro)">   
+                <input name = "paramCurrency" type="text" id="login" class="form-control" placeholder="валюта (dollar, euro)">   
                 <br>
-                <input name = "paramBalance" type="text" id="name" class="form-control" placeholder="balance">                          
+                <input name = "paramBalance" type="text" id="name" class="form-control" placeholder="баланс">                          
                 <br>
-                <input name = "paramState" type="text" id="password" class="form-control" placeholder="State (active, disabled)">
+                <input name = "paramState" type="text" id="password" class="form-control" placeholder="состояние (active, disabled)">
                 <br>
-                <input name = "paramUserId" type="text" id="role" class="form-control" placeholder="use ID">
+                <input name = "paramUserId" type="text" id="role" class="form-control" placeholder="номер владельца">
                 <br>
                 <br>
 
@@ -53,7 +53,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-credit-card"></span> Create new card
+                                <span class="glyphicon glyphicon-credit-card"></span> Создать новую карту
                             </button>
                             </form>
                         </td>
@@ -64,7 +64,7 @@
                         <td>
                             <form action="card-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-credit-card"></span> Back to card menu
+                                    <span class="glyphicon glyphicon-credit-card"></span> В меню карт
                                 </button>
                             </form>
                         </td>

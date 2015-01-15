@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Online banking system main menu</h3>
+            <h3>Банковская система онлайн.Главное меню</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -38,45 +38,45 @@
             <br>
             <table class="table table-striped">
                 <tr>
-                    <th>Description</th>
-                    <th>Menu</th>
+                    <th>Описание</th>
+                    <th>Меню</th>
                 </tr>
                 <tr>
-                    <td>Money balance</td>
+                    <td>Баланс текущего пользователя</td>
                     <td>
                         <form action="balance.jsp?paramName=123">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Balance menu
+                                <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Меню баланса
                             </button>
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Exchange currency</td>
+                    <td>Конвертер валют</td>
                     <td>
                         
                             <button class="btn btn-danger btn-block" type="submit">
-                                <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Exchange menu 
+                                <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> Меню конвертера валют
                             </button>
 
                     </td>    
                 </tr>
                 <tr>
-                    <td>Payment operations</td>
+                    <td>Платежи текущего пользователя</td>
                     <td>
                         <form action="payment-menu.jsp">
                             <button class="btn btn-info btn-block">
-                                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Payment menu
+                                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Меню платежей
                             </button>
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Statistic</td>
+                    <td>Статистика</td>
                     <td>
                         <form action="stat-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Statistic menu
+                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Меню статистики
                             </button> 
                         </form>
                     </td>
@@ -86,22 +86,22 @@
                     if (user != null) {
                         if (user.getAdmin().equals("admin")) {
                             out.write("<tr>");
-                            out.write("<td>User operations</td>");
+                            out.write("<td>Управление пользователями</td>");
                             out.write("<td>");
                             out.write("<form action=\"user-menu.jsp\">");
                             out.write("<button class=\"btn btn-warning btn-block\">");
-                            out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> User menu");
+                            out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> Меню пользователей");
                             out.write("</button>");
                             out.write("</form>");
                             out.write("</td>");
                             out.write("</tr>");
 
                             out.write("<tr>");
-                            out.write("<td>User operations</td>");
+                            out.write("<td>Управление картами</td>");
                             out.write("<td>");
                             out.write("<form action=\"card-menu.jsp\">");
                             out.write("<button class=\"btn btn-warning btn-block\">");
-                            out.write("<span class=\"glyphicon glyphicon-credit-card\" aria-hidden=\"true\"></span> Card menu");
+                            out.write("<span class=\"glyphicon glyphicon-credit-card\" aria-hidden=\"true\"></span> Меню карт");
                             out.write("</button>");
                             out.write("</form>");
                             out.write("</td>");
@@ -114,7 +114,7 @@
 
             <form class="form-signin" method="GET" action="/onlinebanking/webresources/logout">
                 <button class="btn btn-info" type="submit">
-                    <span class="glyphicon glyphicon-off"></span> Log out
+                    <span class="glyphicon glyphicon-off"></span> Выход
                 </button>
             </form>
         </div>

@@ -22,7 +22,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Cards menu</h3>
+            <h3>Банковская система онлайн. Меню банковских карт</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -45,11 +45,11 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Card id</th>
-                    <th>Currency</th>
-                    <th>Balance</th>
-                    <th>State</th>
-                    <th>Owner</th>
+                    <th>Номер</th>
+                    <th>Валюта</th>
+                    <th>Баланс</th>
+                    <th>Состояние</th>
+                    <th>Владелец</th>
                 </tr>
 
                 <%
@@ -98,7 +98,7 @@
                     <td>
                         <form action="card-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-credit-card"></span> Card operations
+                                <span class="glyphicon glyphicon-credit-card"></span> Операции по картам
                             </button>
                         </form>
                     </td>
@@ -108,7 +108,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> В главное меню
                             </button>
                         </form>
                     </td>

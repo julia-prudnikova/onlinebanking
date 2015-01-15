@@ -22,7 +22,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Statistic menu</h3>
+            <h3>Банковская система онлайн.Меню статистики</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -45,8 +45,8 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Date</th>
-                    <th>Description</th>
+                    <th>Дата</th>
+                    <th>Описание</th>
                 </tr>
 
                 <%
@@ -91,7 +91,7 @@
 
             <form action="main-menu.jsp">
                 <button class="btn btn-info">
-                    <span class="glyphicon glyphicon-home"></span> Back to main menu
+                    <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                 </button>
             </form>
 

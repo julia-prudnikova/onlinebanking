@@ -14,11 +14,11 @@
     </head>
     <body>
         <div class="form-signin">
-            <h4>Balance low</h4>
+            <h4>Недостаточно средств!</h4>
             <br>
             <form action="payment-menu.jsp">
                 <button class="btn btn-info">
-                    <span class="glyphicon glyphicon-home"></span> Back to payment-menu
+                    <span class="glyphicon glyphicon-home"></span> Вернуться в меню оплаты
                 </button>
             </form>            
         </div>

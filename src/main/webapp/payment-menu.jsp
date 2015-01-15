@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users operations menu</h3>
+            <h3>Банковская система онлайн. Меню платежей</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -39,17 +39,17 @@
                 <tr>
                     <td>
                         <form class="form-signin" method="GET" action="/onlinebanking/webresources/pay/phone">                                                        
-                            <input name = "paramCardId" type="text" id="login" class="form-control" placeholder="Card id" required autofocus>                            
+                            <input name = "paramCardId" type="text" id="login" class="form-control" placeholder="Номер карты" required autofocus>                            
 
                             </td>
                             <td> &nbsp</td>
                             <td>
-                                <input name = "paramPayment" type="text" id="login" class="form-control" placeholder="Pay phone balance" required autofocus>
+                                <input name = "paramPayment" type="text" id="login" class="form-control" placeholder="Оплата телефона - сумма" required autofocus>
                             </td>
                             <td> &nbsp</td>
                             <td>
                                 <button class="btn btn-info btn-block" type="submit">
-                                    <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Pay for phone
+                                    <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Оплатить
                                 </button>
                             </td>
                         </form>
@@ -60,16 +60,16 @@
                 <tr>
                     <td>
                         <form class="form-signin" method="GET" action="/onlinebanking/webresources/pay/home">
-                            <input name = "paramCardId" type="text" id="login" class="form-control" placeholder="Card Id" required autofocus>                            
+                            <input name = "paramCardId" type="text" id="login" class="form-control" placeholder="Номер карты" required autofocus>                            
                             </td>
                             <td> &nbsp</td>
                             <td>
-                                <input name = "paramPayment" type="text" id="login" class="form-control" placeholder="Pay home balance" required autofocus>
+                                <input name = "paramPayment" type="text" id="login" class="form-control" placeholder="Оплата комунальных услуг - сумма" required autofocus>
                             </td>
                             <td> &nbsp</td>
                             <td>
                                 <button class="btn btn-info btn-block" type="submit">
-                                    <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Pay for home
+                                    <span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Оплатить
                                 </button>
                             </td>
                         </form>
@@ -79,7 +79,7 @@
             <br>
             <form action="main-menu.jsp">
                 <button class="btn btn-info">
-                    <span class="glyphicon glyphicon-home"></span> Back to main menu
+                    <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                 </button>
             </form>
 

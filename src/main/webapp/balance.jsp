@@ -22,7 +22,7 @@
     <body>
         <div class="container">
 
-            <h3>Online banking system balance menu</h3>
+            <h3>Банковская система онлайн. Меню баланса</h3>
             <br>         
             <br>
             <h4>
@@ -63,10 +63,10 @@
                     for (int i = 0; i < finalCardsList.size(); i++) {
                         out.write("<table class=\"table table-striped\">");
                         out.write("<tr>");
-                        out.write("<th>Card number</th>");
-                        out.write("<th>Card currency</th>");
-                        out.write("<th>Card balance</th>");
-                        out.write("<th>Card state</th>");
+                        out.write("<th>Номер</th>");
+                        out.write("<th>Валюта</th>");
+                        out.write("<th>Баланс</th>");
+                        out.write("<th>Статус</th>");
                         out.write("</tr>");
 
                         Card card = finalCardsList.get(i);
@@ -94,7 +94,7 @@
 
             <form action="main-menu.jsp">
                 <button class="btn btn-info">
-                    <span class="glyphicon glyphicon-home"></span> Back to main menu
+                    <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                 </button>
             </form>
 
